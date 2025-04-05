@@ -5,16 +5,116 @@
   <meta charset="UTF-8" />
   <title>Case Studies | Tech 2025</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .filter-buttons {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .filter-buttons button {
+      margin: 5px;
+      padding: 8px 18px;
+      background: #00ffe0;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .feature-box[data-category] {
+      display: none;
+    }
+    .feature-box.visible {
+      display: block;
+    }
+    .read-more-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .read-more-btn {
+      background: transparent;
+      border: 1px solid #00ffe0;
+      padding: 5px 10px;
+      color: #00ffe0;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header"><div class="logo">🔒 TechSecure 2025</div></header>
 <section class="features">
-  <h2>Case Studies</h2>
-  <div class="feature-box">
-    <h3>Retail Client: Ransomware Defense</h3>
-    <p>Implemented layered security and zero-trust access models. Result: 98% threat reduction within 30 days.</p>
+  <h2>Real-World Case Studies</h2>
+
+  <div class="filter-buttons">
+    <button data-filter="all">All</button>
+    <button data-filter="ecommerce">E-Commerce</button>
+    <button data-filter="healthcare">Healthcare</button>
+    <button data-filter="fintech">FinTech</button>
+  </div>
+
+  <div class="feature-box visible" data-category="ecommerce">
+    <h3>🛍️ E-Commerce Ransomware Defense</h3>
+    <img src="https://cdn.pixabay.com/photo/2021/03/07/20/19/hacker-6074998_1280.jpg" alt="Ransomware Prevention" style="width:100%; border-radius:10px;">
+    <p><strong>Client:</strong> Online retailer faced ransomware encryption of 60% of its database.</p>
+    <div class="read-more-content">
+      <p><strong>Solution:</strong> Deployed endpoint detection, restored backups, and hardened firewall.</p>
+      <p><strong>Outcome:</strong> Full recovery within 2 hours, 87% risk reduction post-incident.</p>
+    </div>
+    <button class="read-more-btn">Read More</button>
+  </div>
+
+  <div class="feature-box visible" data-category="healthcare">
+    <h3>🏥 Healthcare Compliance Audit</h3>
+    <img src="https://cdn.pixabay.com/photo/2017/03/12/20/32/doctor-2131135_1280.jpg" alt="Healthcare Audit" style="width:100%; border-radius:10px;">
+    <p><strong>Client:</strong> National clinic chain undergoing HIPAA audit.</p>
+    <div class="read-more-content">
+      <p><strong>Solution:</strong> Risk assessment, HIPAA policy deployment, staff training.</p>
+      <p><strong>Outcome:</strong> Audit passed with zero findings. Staff trained for cyber hygiene.</p>
+    </div>
+    <button class="read-more-btn">Read More</button>
+  </div>
+
+  <div class="feature-box visible" data-category="fintech">
+    <h3>🏦 FinTech SIEM Integration</h3>
+    <img src="https://cdn.pixabay.com/photo/2018/03/01/14/40/business-3190198_1280.jpg" alt="SIEM Dashboard" style="width:100%; border-radius:10px;">
+    <p><strong>Client:</strong> Banking-as-a-Service platform expanded regionally.</p>
+    <div class="read-more-content">
+      <p><strong>Solution:</strong> Legacy migration to AI-powered SIEM + DevSecOps pipeline.</p>
+      <p><strong>Outcome:</strong> Intrusion response time reduced to under 1 minute.</p>
+    </div>
+    <button class="read-more-btn">Read More</button>
   </div>
 </section>
-<footer><p>&copy; 2025 TechSecure</p></footer>
+<footer>
+  <p style="text-align:center;">&copy; 2025 TechSecure | All Rights Reserved</p>
+</footer>
+<script>
+  // Filter toggle
+  const buttons = document.querySelectorAll('.filter-buttons button');
+  const boxes = document.querySelectorAll('.feature-box');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.getAttribute('data-filter');
+      boxes.forEach(box => {
+        if (type === 'all' || box.dataset.category === type) {
+          box.classList.add('visible');
+        } else {
+          box.classList.remove('visible');
+        }
+      });
+    });
+  });
+
+  // Read more toggle
+  document.querySelectorAll('.read-more-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.previousElementSibling;
+      const isVisible = content.style.display === 'block';
+      content.style.display = isVisible ? 'none' : 'block';
+      button.textContent = isVisible ? 'Read More' : 'Show Less';
+    });
+  });
+</script>
 </body>
 </html>
