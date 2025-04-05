@@ -195,3 +195,89 @@ footer {
     display: none;
   }
 }
+
+
+/* Nav Dropdown */
+.nav-links {
+  position: relative;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li ul {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: var(--card-bg);
+  padding: 10px 0;
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-links li:hover > ul {
+  display: block;
+}
+
+.nav-links li ul li {
+  margin: 0;
+}
+
+.nav-links li ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: var(--text);
+  transition: background 0.2s;
+}
+
+.nav-links li ul li a:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* Button Hover Animation */
+.btn-primary, .btn-secondary, .cta-button {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .cta-button:hover {
+  transform: translateY(-2px);
+  background-color: var(--primary);
+  color: #000;
+}
+
+
+/* Background and Theme Styles */
+body {
+  background: url('https://www.usd.de/wp-content/uploads/usd-AG-wie-werde-ich-pentester.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.85);
+  z-index: -1;
+}
+
+/* Dark Mode Toggle */
+.toggle-darkmode {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 999;
+}
