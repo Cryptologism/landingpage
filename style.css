@@ -443,3 +443,25 @@ html {
   0% { clip-path: inset(50% 0 10% 0); }
   100% { clip-path: inset(40% 0 30% 0); }
 }
+
+
+.toggle-darkmode {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: #00ffe0;
+  color: #000;
+  border: none;
+  padding: 10px 14px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 255, 224, 0.5);
+  transition: background 0.3s ease;
+}
+
+.toggle-darkmode:hover {
+  background: #00c8bb;
+}
