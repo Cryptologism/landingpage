@@ -1,0 +1,115 @@
+:root {
+  --bg: #f4f6fa;
+  --text: #333;
+  --card-bg: #fff;
+  --header-bg: #1e1e2f;
+  --primary: #1e1e2f;
+  --accent: #5c9ded;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --card-bg: #1f1f1f;
+  --header-bg: #000;
+  --primary: #1e1e2f;
+  --accent: #8ab4f8;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 60px;
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--primary);
+  color: white;
+}
