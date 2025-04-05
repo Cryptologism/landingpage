@@ -465,3 +465,31 @@ html {
 .toggle-darkmode:hover {
   background: #00c8bb;
 }
+
+
+/* Scroll animation classes */
+.feature-box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.feature-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Enhanced scroll animations */
+.feature-box {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+  transition: all 0.6s ease-out;
+  transition-delay: var(--delay, 0ms);
+}
+
+.feature-box.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
