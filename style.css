@@ -281,3 +281,99 @@ body::before {
   cursor: pointer;
   z-index: 999;
 }
+
+
+.feature-strip {
+  background: #2e2e2e;
+  padding: 12px 0;
+  overflow-x: auto;
+}
+
+.feature-strip ul {
+  display: flex;
+  gap: 30px;
+  padding: 0 30px;
+  margin: 0;
+  list-style: none;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #eee;
+}
+
+.feature-strip li::before {
+  content: "✔";
+  margin-right: 8px;
+  color: #00ffe0;
+}
+
+
+.feature-strip ul {
+  display: flex;
+  gap: 30px;
+  padding: 0 30px;
+  margin: 0;
+  list-style: none;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #f5f5f5;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  font-size: 1.05rem;
+}
+
+
+/* Button Glow */
+.btn-primary, .btn-secondary, .cta-button {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 255, 224, 0.2);
+}
+
+/* Headings Glow */
+h1, h2, h3 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  color: #f8f8f8;
+}
+
+/* Hero text emphasis */
+.hero h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 255, 255, 0.3);
+}
+
+
+/* Parallax background effect */
+body::before {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Counter style */
+.counter-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+}
+
+.counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  text-shadow: 0 1px 3px rgba(0, 255, 255, 0.5);
+}
+
+/* Page transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
