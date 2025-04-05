@@ -1,168 +1,197 @@
 :root {
   --bg: #0d0f14;
-  --text: #d1d1e0;
-  --card-bg: #16191f;
-  --header-bg: rgba(0, 0, 0, 0.6);
-  --primary: #1e90ff;
-  --accent: #00ffe0;
-}
-
-body.dark {
-  --bg: #0d0f14;
-  --text: #d1d1e0;
-  --card-bg: #1f1f1f;
-  --header-bg: rgba(0, 0, 0, 0.6);
-  --primary: #1e90ff;
-  --accent: #8ab4f8;
+  --text: #e0e0f0;
+  --primary: #00ffe0;
+  --secondary: #1e90ff;
+  --card-bg: #1c1f26;
+  --header-bg: rgba(0, 0, 0, 0.8);
 }
 
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
-  scroll-behavior: smooth;
   background-color: var(--bg);
   color: var(--text);
-  background-image: url('https://www.usd.de/wp-content/uploads/usd-AG-wie-werde-ich-pentester.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  transition: background 0.3s, color 0.3s;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.85);
-  min-height: 100vh;
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --card-bg: #222;
+  --header-bg: rgba(0, 0, 0, 0.9);
 }
 
-header {
+.site-header {
   background: var(--header-bg);
-  color: var(--text);
-  padding: 20px;
-  border-bottom: 1px solid var(--accent);
-  backdrop-filter: blur(10px);
-}
-
-.header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
-}
-
-.controls button {
-  background: none;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  font-size: 18px;
-  margin-left: 10px;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-.controls button:hover {
-  background: var(--accent);
-  color: #000;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-}
-
-.sidebar {
-  width: 250px;
-  background-color: rgba(22, 25, 31, 0.9);
-  padding: 30px 20px;
-  min-height: 100vh;
-  border-right: 2px solid var(--accent);
+  padding: 15px 30px;
   position: sticky;
   top: 0;
-  backdrop-filter: blur(6px);
-  box-shadow: 4px 0 10px rgba(0, 255, 255, 0.1);
+  z-index: 999;
+  backdrop-filter: blur(10px);
 }
 
-.sidebar h3 {
-  color: var(--accent);
-  font-size: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 5px;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
 }
 
-.sidebar ul {
+.nav-links {
   list-style: none;
-  padding-left: 0;
-  margin: 0;
+  display: flex;
+  gap: 20px;
 }
 
-.sidebar li {
-  margin: 12px 0;
-}
-
-.sidebar a {
+.nav-links li a {
   color: var(--text);
   text-decoration: none;
-  font-size: 16px;
-  transition: all 0.3s;
-  display: block;
-  padding: 8px 10px;
-  border-radius: 6px;
+  font-weight: 500;
 }
 
-.sidebar a:hover {
-  background-color: var(--accent);
-  color: #000;
+.cta-button {
+  background: var(--secondary);
+  padding: 10px 18px;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
-main {
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 30px;
+  background: linear-gradient(to right, #000000dd, #0d0f14dd);
+  animation: fadeIn 1s ease-in;
+}
+
+.hero-text {
+  max-width: 600px;
   flex: 1;
-  padding: 40px;
-  max-width: 1000px;
+  animation: slideInLeft 1s ease-out;
 }
 
-section {
-  margin-bottom: 60px;
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 255, 224, 0.1);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  border-left: 4px solid var(--accent);
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
 }
 
-section.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.hero-buttons {
+  display: flex;
+  gap: 20px;
 }
 
-h1, h2 {
-  font-weight: 600;
-  color: var(--accent);
-}
-
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 12px 18px;
-  font-size: 18px;
-  background-color: var(--accent);
-  color: #000;
+.btn-primary, .btn-secondary {
+  padding: 12px 20px;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
-  display: none;
-  z-index: 999;
-  box-shadow: 0 0 10px var(--accent);
+  text-decoration: none;
+  color: white;
+}
+
+.btn-primary {
+  background: var(--secondary);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+  animation: slideInRight 1s ease-out;
+}
+
+.hero-image img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.feature-strip {
+  background: var(--primary);
+  padding: 12px 0;
+  overflow-x: auto;
+}
+
+.feature-strip ul {
+  display: flex;
+  gap: 30px;
+  padding: 0 30px;
+  margin: 0;
+  list-style: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.about, .features {
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.feature-box {
+  background: var(--card-bg);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0,255,255,0.1);
 }
 
 footer {
-  text-align: center;
+  background: #000;
   padding: 20px;
-  background: var(--header-bg);
-  color: var(--text);
-  border-top: 1px solid var(--accent);
+  color: white;
+  text-align: center;
+}
+
+.toggle-darkmode {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; } 
+  100% { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .nav-links {
+    display: none;
+  }
 }
