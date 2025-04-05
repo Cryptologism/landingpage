@@ -377,3 +377,69 @@ html {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* Loading screen */
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0f14;
+  color: #00ffe0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 9999;
+}
+
+/* 3D tilt effect */
+.tilt {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+.tilt:hover {
+  transform: perspective(800px) rotateY(5deg) rotateX(5deg);
+}
+
+/* Glitch text effect */
+.glitch {
+  color: #fff;
+  font-size: 2.2rem;
+  position: relative;
+  text-shadow: 0 0 5px #00ffe0;
+}
+
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #00ffe0;
+  z-index: -1;
+}
+
+.glitch::before {
+  top: -1px;
+  text-shadow: -1px 0 red;
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  bottom: -1px;
+  text-shadow: 1px 0 blue;
+  animation: glitchBottom 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 80% 0); }
+  100% { clip-path: inset(20% 0 60% 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(50% 0 10% 0); }
+  100% { clip-path: inset(40% 0 30% 0); }
+}
