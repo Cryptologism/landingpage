@@ -2,39 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services | Tech 2025</title>
+  <title>Our Services & Packages | Tech 2025</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .pricing-table {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .pricing-plan {
+      background: #1e1e2f;
+      padding: 20px;
+      border-radius: 12px;
+      width: 280px;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0,255,255,0.1);
+    }
+    .pricing-plan h3 {
+      margin-top: 0;
+    }
+    .pricing-plan ul {
+      list-style: none;
+      padding: 0;
+    }
+    .pricing-plan ul li {
+      margin-bottom: 8px;
+      padding-left: 1em;
+    }
+    .pricing-plan .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #00ffe0;
+    }
+    .pricing-plan button, .pricing-plan a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #00ffe0;
+      color: #000;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo">🔒 TechSecure 2025</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  
+<header class="site-header">
+  <div class="logo">🔒 TechSecure 2025</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="cases.html">Pages</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="start-now.html">Get Started Now</a></li>
+    </ul>
+  </nav>
+</header>
+
   <section class="features">
-    <h2>Our Professional Services</h2>
-    <div class="feature-box">
-      <h3>Cybersecurity Consulting</h3>
-      <p>We assess risks and craft personalized solutions to secure your data and infrastructure.</p>
-    </div>
-    <div class="feature-box">
-      <h3>AI-Powered Security Tools</h3>
-      <p>Integrate AI-driven detection and prevention systems into your digital architecture.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Vulnerability Testing</h3>
-      <p>Routine penetration testing and vulnerability analysis to keep threats in check.</p>
+    <h2>Our Professional Services & Plans</h2>
+    <div class="pricing-table">
+      <div class="pricing-plan">
+        <h3>Starter</h3>
+        <p class="price">$49/mo</p>
+        <ul>
+          <li>✅ AI Alerts</li>
+          <li>✅ Basic vulnerability scans</li>
+          <li>✅ Monthly threat reports</li>
+        </ul>
+        <form action="https://buy.stripe.com/test_aEU00q6qu6sy4eY8ww" method="POST">
+          <button type="submit">Subscribe via Stripe</button>
+        </form>
+      </div>
+      <div class="pricing-plan">
+        <h3>Pro</h3>
+        <p class="price">$149/mo</p>
+        <ul>
+          <li>✅ Weekly audits</li>
+          <li>✅ 24/7 threat detection</li>
+          <li>✅ Penetration testing</li>
+        </ul>
+        <form action="https://buy.stripe.com/test_9AQ8y06qu0ea4eY9AD" method="POST">
+          <button type="submit">Subscribe via Stripe</button>
+        </form>
+      </div>
+      <div class="pricing-plan">
+        <h3>Enterprise</h3>
+        <p class="price">Custom</p>
+        <ul>
+          <li>✅ Compliance management</li>
+          <li>✅ SOC-as-a-Service</li>
+          <li>✅ Dedicated analyst & dashboard</li>
+        </ul>
+        <a href="start-now.html">Contact Sales</a>
+      </div>
     </div>
   </section>
-  <footer>
-    <p>&copy; 2025 TechSecure | All rights reserved</p>
-  </footer>
+  <footer><p style="text-align:center;">&copy; 2025 TechSecure | All Rights Reserved</p></footer>
 </body>
 </html>

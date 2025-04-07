@@ -1,78 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Contact Us | Tech 2025</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .contact-form {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 30px;
-      background: #1e1e2f;
-      border-radius: 12px;
-      color: #fff;
-    }
-    .contact-form h2 {
-      margin-top: 0;
-    }
-    .contact-form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: none;
-      border-radius: 8px;
-      background: #2c2c3e;
-      color: #fff;
-    }
-    .contact-form button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #00ffe0;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .contact-form button:hover {
-      background: #00c8bb;
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header"><div class="logo">🔒 TechSecure 2025</div></header>
-  <div class="contact-form">
-    <h2>Contact Our Team</h2>
-    <form action="#" method="post" onsubmit="event.preventDefault(); alert('Form submitted! This demo does not send emails yet.');">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="service">Interested Service</label>
-      <select id="service" name="service" required>
-        <option value="">Select a service</option>
-        <option value="Threat Intelligence Monitoring">Threat Intelligence Monitoring</option>
-        <option value="Penetration Testing">Penetration Testing</option>
-        <option value="Cyber Risk Report">Cyber Risk Report</option>
-        <option value="Custom Consultancy">Custom Consultancy</option>
-      </select>
-
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Submit Request</button>
-    </form>
-  </div>
-  <footer><p style="text-align:center;">&copy; 2025 TechSecure | All Rights Reserved</p></footer>
-</body>
-</html>
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Contact Us | Tech 2025</title><link rel='stylesheet' href='style.css'></head><body>
+<header class="site-header">
+  <div class="logo">🔒 TechSecure 2025</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="cases.html">Pages</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="start-now.html">Get Started Now</a></li>
+    </ul>
+  </nav>
+</header>
+<div class='contact-form'><h2>Contact Our Team</h2><form action='#' method='post' onsubmit="event.preventDefault(); alert('Form submitted! This demo does not send emails yet.');"><label for='name'>Full Name</label><input type='text' id='name' name='name' required><label for='email'>Email Address</label><input type='email' id='email' name='email' required><label for='service'>Interested Service</label><select id='service' name='service'><option>Select a service</option><option>Penetration Testing</option><option>Threat Intelligence</option><option>Compliance Audit</option></select><label for='message'>Message</label><textarea id='message' name='message' rows='4'></textarea><button type='submit'>Submit</button></form></div><footer><p style='text-align:center;'>&copy; 2025 TechSecure | All Rights Reserved</p></footer></body></html>
